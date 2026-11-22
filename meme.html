@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>PLAYER ONE — Professional Waiter, 13 Years Experience — GTA VI meme, v4</title>
+<style>
+  /* Base reset: the canvas is exactly the 1024x1024 meme. */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1024px; height: 1024px; overflow: hidden; }
+  body {
+    position: relative;
+    font-family: "Noto Sans", "DejaVu Sans", sans-serif;
+    background: linear-gradient(180deg,
+      #160829 0%, #3a0a4d 30%, #7a1160 55%, #c41c83 76%, #ff7a3d 100%);
+  }
+
+  /* ===== The resume card ===== */
+  .resume {
+    position: absolute;
+    left: 36px; top: 16px;
+    width: 952px; height: 820px;
+    background: #fffdf7;
+    border-radius: 26px;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+    overflow: hidden;
+    padding: 28px 40px 0 40px;
+  }
+
+  /* Header: ghost brand mark + name + title + contact line. */
+  .header { display: flex; align-items: center; }
+  .header .logo { width: 72px; height: 72px; flex: none; }
+  .header .id { margin-left: 20px; }
+  .header .name {
+    font-size: 62px; font-weight: 900; line-height: 1;
+    letter-spacing: 1px; color: #17122b;
+  }
+  .header .title {
+    margin-top: 6px;
+    font-size: 32px; font-weight: 800; letter-spacing: 2px; color: #c41c83;
+  }
+  .header .contact {
+    margin-top: 4px;
+    font-size: 22px; font-weight: 700; color: #6b665c;
+  }
+
+  /* The punchline: a full-width magenta band, the biggest text after the name. */
+  .punch {
+    margin: 16px -40px 0 -40px;
+    padding: 12px 40px;
+    background: #c41c83;
+    text-align: center;
+  }
+  .punch .big {
+    font-size: 54px; font-weight: 900; letter-spacing: 2px; color: #fff;
+    white-space: nowrap;
+  }
+
+  /* Section labels: small caps, magenta rule underneath. */
+  .section { margin-top: 16px; }
+  .section .label {
+    font-size: 22px; font-weight: 900; letter-spacing: 3px; color: #c41c83;
+    border-bottom: 3px solid #c41c83;
+    padding-bottom: 4px;
+  }
+
+  /* One job: title row (role left, years right) + one-line joke. */
+  .job { margin-top: 10px; }
+  .job .row { display: flex; align-items: baseline; }
+  .job .role { font-size: 29px; font-weight: 800; color: #17122b; }
+  .job .years {
+    margin-left: auto; white-space: nowrap;
+    font-size: 24px; font-weight: 700; color: #6b665c;
+  }
+  .job .line { margin-top: 2px; font-size: 25px; font-weight: 600; color: #3a3648; }
+
+  /* Skills: one row, two items, no section header — the two that don't
+     repeat the jobs above. */
+  .skills {
+    margin-top: 16px;
+    display: flex;
+  }
+  .skill { width: 50%; font-size: 25px; font-weight: 600; color: #3a3648; }
+  .skill:first-child { padding-right: 24px; }
+  .skill b { font-weight: 900; color: #17122b; }
+  .skill .tag { font-weight: 900; color: #c41c83; letter-spacing: 2px; }
+
+  /* One-liners: education + references, label inline. */
+  .oneline { margin-top: 10px; font-size: 25px; font-weight: 600; color: #3a3648; }
+  .oneline b { font-weight: 900; color: #17122b; }
+  .oneline .tag { font-weight: 900; color: #c41c83; letter-spacing: 2px; }
+
+  /* ===== Payment band: ghost + "paid by my AI agent" ===== */
+  .payband {
+    position: absolute; left: 36px; top: 848px;
+    width: 952px; height: 164px;
+    background: #17122b; border-radius: 26px;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+  }
+  .payband .ghost {
+    position: absolute; z-index: 3;
+    left: 30px; top: -4px; width: 170px; height: 170px;
+  }
+  .payband .paytext {
+    position: absolute; left: 228px; top: 0;
+    width: 694px; height: 164px;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .payband .paid { font-size: 30px; font-weight: 900; line-height: 1.05; color: #fff; white-space: nowrap; }
+  .payband .sub { margin-top: 5px; font-size: 21px; font-weight: 600; color: #fff; white-space: nowrap; }
+  .payband .pill {
+    align-self: flex-start; margin-top: 8px; padding: 6px 24px;
+    background: #fff; border-radius: 999px;
+    color: #c41c83; font-size: 26px; font-weight: 900; letter-spacing: 0.5px;
+  }
+
+  /* Footer tagline, centred under the payment band. */
+  .footer { position: absolute; left: 0; right: 0; top: 978px; text-align: center; }
+  .footer span {
+    display: inline-block; padding: 7px 24px;
+    background: #17122b; border-radius: 999px;
+    color: #fff; font-size: 21px; font-weight: 700; font-style: italic;
+  }
+</style>
+</head>
+<body>
+
+  <div class="resume">
+    <div class="header">
+      <img class="logo" src="assets/mark-1024.png" alt="make.fun ghost">
+      <div class="id">
+        <div class="name">PLAYER ONE</div>
+        <div class="title">PROFESSIONAL WAITER</div>
+        <div class="contact">Los Santos, CA &middot; Est. 2013 &middot; Available Nov 19, 2026</div>
+      </div>
+    </div>
+
+    <div class="punch">
+      <div class="big">13 YEARS EXPERIENCE</div>
+    </div>
+
+    <div class="section">
+      <div class="label">EXPERIENCE</div>
+      <div class="job">
+        <div class="row"><div class="role">Senior Waiter, Self-Employed</div><div class="years">2013 &ndash; 2026</div></div>
+        <div class="line">Waited 4,811 days for GTA VI. Never quit.</div>
+      </div>
+      <div class="job">
+        <div class="row"><div class="role">Trailer Analyst, YouTube</div><div class="years">2013 &ndash; 2026</div></div>
+        <div class="line">Trailer 1: 212 views. Trailer 2: 87 views. Still not enough.</div>
+      </div>
+      <div class="job">
+        <div class="row"><div class="role">Rumor Tracker, Reddit</div><div class="years">2013 &ndash; 2026</div></div>
+        <div class="line">9 delays, 47 rumors, 2 false launches. All wrong.</div>
+      </div>
+    </div>
+
+    <div class="skills">
+      <div class="skill"><span class="tag">SKILLS</span>&nbsp;&nbsp;<b>Patience</b> &mdash; Expert</div>
+      <div class="skill"><b>Sick Days</b> &mdash; 5 banked for Nov 19</div>
+    </div>
+
+    <div class="oneline"><span class="tag">EDUCATION</span>&nbsp;&nbsp;<b>GTA V University</b> &mdash; Class of 2013. Still waiting.</div>
+    <div class="oneline"><span class="tag">REFERENCES</span>&nbsp;&nbsp;Rockstar Games &mdash; they know me. Here since 2013.</div>
+  </div>
+
+  <div class="payband">
+    <img class="ghost" src="assets/mark-1024.png" alt="make.fun ghost">
+    <div class="paytext">
+      <div class="paid">PAID BY MY AI AGENT</div>
+      <div class="sub">$79.99, with a bounty it won on</div>
+      <div class="pill">make.fun</div>
+    </div>
+  </div>
+
+</body>
+</html>
